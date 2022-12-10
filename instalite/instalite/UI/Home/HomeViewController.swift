@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Combine
 
 class HomeViewController: UIViewController {
     // MARK: Properties
     
     private let viewModel: HomeViewModel
+    private var subscriptions = Set<AnyCancellable>()
 
     // MARK: Init
     
@@ -30,5 +32,15 @@ class HomeViewController: UIViewController {
 
         view.backgroundColor = .white
         viewModel.viewDidLoad()
+        bind()
+    }
+    
+    private func bind() {
+        viewModel
+            .$accountInfo
+            .sink { [weak self] accountInfo in
+                print("account", accountInfo)
+            }
+            .store(in: &subscriptions)
     }
 }

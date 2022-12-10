@@ -7,6 +7,7 @@
 
 import Foundation
 import Logging
+import Combine
 
 final class HomeViewModel {
     // MARK: Properties
@@ -14,6 +15,9 @@ final class HomeViewModel {
     private let accountInfoRepository: AccountRepositoryProtocol
     private let mediaInfoRepository: MediaRepositoryProtocol
     private let logger: Logger
+    @Published private(set) var accountInfo: AccountInfo?
+    @Published private(set) var error: Error?
+    @Published private(set) var mediaInfo: MediaInfo?
     
     // MARK: Init
     
@@ -28,6 +32,8 @@ final class HomeViewModel {
     }
 }
 
+// MARK: Public methods
+
 extension HomeViewModel {
     func viewDidLoad() {
         fetchAccountInfo()
@@ -40,10 +46,11 @@ private extension HomeViewModel {
     func fetchAccountInfo() {
         Task {
             do {
-                let accountInfoObject = try await mediaInfoRepository.fetchAlbumInfo(for: "17880028738697994" )
-                print("accountInfoObject", accountInfoObject)
+                let accountInfoObject = try await accountInfoRepository.fetchAccountInfo()
+                accountInfo = accountInfoObject
             } catch let fetchError {
                 logger.error("\(fetchError)")
+                error = fetchError
             }
         }
     }
