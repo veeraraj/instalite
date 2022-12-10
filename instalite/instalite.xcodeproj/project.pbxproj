@@ -49,6 +49,8 @@
 		0DFB866C2944D6D10048B6DA /* instaliteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instaliteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DFB86702944D6D10048B6DA /* instaliteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instaliteUITests.swift; sourceTree = "<group>"; };
 		0DFB86722944D6D10048B6DA /* instaliteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instaliteUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0DFB86802944DB800048B6DA /* develop.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = develop.xcconfig; sourceTree = "<group>"; };
+		0DFB86812944DB930048B6DA /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		0DFB864E2944D6CE0048B6DA /* instalite */ = {
 			isa = PBXGroup;
 			children = (
+				0DFB867F2944DB280048B6DA /* SupportingFiles */,
 				0DFB864F2944D6CE0048B6DA /* AppDelegate.swift */,
 				0DFB86512944D6CE0048B6DA /* SceneDelegate.swift */,
 				0DFB86532944D6CE0048B6DA /* ViewController.swift */,
@@ -125,6 +128,15 @@
 				0DFB86722944D6D10048B6DA /* instaliteUITestsLaunchTests.swift */,
 			);
 			path = instaliteUITests;
+			sourceTree = "<group>";
+		};
+		0DFB867F2944DB280048B6DA /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0DFB86802944DB800048B6DA /* develop.xcconfig */,
+				0DFB86812944DB930048B6DA /* release.xcconfig */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
