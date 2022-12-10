@@ -24,7 +24,7 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let viewModel = HomeViewModel(accountInfoRepository: AppRepository.shared.AccountInfoRepository)
+        let viewModel = HomeViewModel(accountInfoRepository: AppRepository.shared.AccountInfoRepository, mediaInfoRepository: AppRepository.shared.MediaInfoRepository)
         viewModel.coordinator =  self
         let viewController = HomeViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: true)

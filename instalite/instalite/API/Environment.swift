@@ -27,9 +27,16 @@ extension Environment {
     }
         
     var accountInfoURLString: String {
-        baseURLString + "/me"
+        "\(baseURLString)/me"
     }
     
+    var allMediaURLString: String {
+        "\(baseURLString)/me/media"
+    }
+    
+    func albumDetailsURLString(for albumId: String) -> String {
+        "\(baseURLString)/\(albumId)/children"
+    }
     // Access token is stored in Configuration(XCConfig) files as we should not hard code them in the code
     
     var accessToken: String {

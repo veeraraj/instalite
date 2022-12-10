@@ -11,6 +11,7 @@ import Logging
 protocol AppRepositoryProtocol {
     var logger: Logger { get }
     var AccountInfoRepository: AccountRepositoryProtocol { get }
+    var MediaInfoRepository: MediaRepositoryProtocol { get }
 }
 
 final class AppRepository: AppRepositoryProtocol {
@@ -21,4 +22,5 @@ final class AppRepository: AppRepositoryProtocol {
     
     lazy var logger: Logger = Logger(label: "com.enablon.instalite")
     lazy var AccountInfoRepository: AccountRepositoryProtocol = AccountRepository(networkRequest: APIHandler(), environment: .development)
+    lazy var MediaInfoRepository: MediaRepositoryProtocol = MediaRepository(networkRequest: APIHandler(), environment: .development)
 }
