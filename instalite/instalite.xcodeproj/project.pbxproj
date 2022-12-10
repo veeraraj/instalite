@@ -26,6 +26,11 @@
 		0DFB86A42944F32C0048B6DA /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB86A32944F32C0048B6DA /* String+Extensions.swift */; };
 		0DFB86A62944F3630048B6DA /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB86A52944F3630048B6DA /* URL+Extensions.swift */; };
 		0DFB86A82944F3890048B6DA /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB86A72944F3890048B6DA /* Bundle+Extensions.swift */; };
+		0DFB86AB294500D30048B6DA /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB86AA294500D30048B6DA /* AppRepository.swift */; };
+		0DFB86AE294501060048B6DA /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 0DFB86AD294501060048B6DA /* Logging */; };
+		0DFB86B2294501920048B6DA /* AccountRepositoryEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB86B1294501920048B6DA /* AccountRepositoryEndpoints.swift */; };
+		0DFB86B42945052D0048B6DA /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB86B32945052D0048B6DA /* AccountRepository.swift */; };
+		0DFB86B8294505CE0048B6DA /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB86B7294505CE0048B6DA /* AccountInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +76,10 @@
 		0DFB86A32944F32C0048B6DA /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		0DFB86A52944F3630048B6DA /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		0DFB86A72944F3890048B6DA /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		0DFB86AA294500D30048B6DA /* AppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepository.swift; sourceTree = "<group>"; };
+		0DFB86B1294501920048B6DA /* AccountRepositoryEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepositoryEndpoints.swift; sourceTree = "<group>"; };
+		0DFB86B32945052D0048B6DA /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
+		0DFB86B7294505CE0048B6DA /* AccountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DFB86AE294501060048B6DA /* Logging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				0DFB864F2944D6CE0048B6DA /* AppDelegate.swift */,
+				0DFB86B5294505A30048B6DA /* Models */,
+				0DFB86A9294500BB0048B6DA /* Repositories */,
 				0DFB868D2944EA2D0048B6DA /* Coordinator */,
 				0DFB86902944EC680048B6DA /* UI */,
 				0DFB86972944F0000048B6DA /* API */,
@@ -217,6 +229,48 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		0DFB86A9294500BB0048B6DA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				0DFB86AA294500D30048B6DA /* AppRepository.swift */,
+				0DFB86AF294501460048B6DA /* AccountRepository */,
+				0DFB86B0294501640048B6DA /* MediaRepository */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		0DFB86AF294501460048B6DA /* AccountRepository */ = {
+			isa = PBXGroup;
+			children = (
+				0DFB86B1294501920048B6DA /* AccountRepositoryEndpoints.swift */,
+				0DFB86B32945052D0048B6DA /* AccountRepository.swift */,
+			);
+			path = AccountRepository;
+			sourceTree = "<group>";
+		};
+		0DFB86B0294501640048B6DA /* MediaRepository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MediaRepository;
+			sourceTree = "<group>";
+		};
+		0DFB86B5294505A30048B6DA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0DFB86B6294505BA0048B6DA /* AccountInfoModel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0DFB86B6294505BA0048B6DA /* AccountInfoModel */ = {
+			isa = PBXGroup;
+			children = (
+				0DFB86B7294505CE0048B6DA /* AccountInfo.swift */,
+			);
+			path = AccountInfoModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -233,6 +287,9 @@
 			dependencies = (
 			);
 			name = instalite;
+			packageProductDependencies = (
+				0DFB86AD294501060048B6DA /* Logging */,
+			);
 			productName = instalite;
 			productReference = 0DFB864C2944D6CE0048B6DA /* instalite.app */;
 			productType = "com.apple.product-type.application";
@@ -306,6 +363,7 @@
 			);
 			mainGroup = 0DFB86432944D6CE0048B6DA;
 			packageReferences = (
+				0DFB86AC294501060048B6DA /* XCRemoteSwiftPackageReference "swift-log" */,
 			);
 			productRefGroup = 0DFB864D2944D6CE0048B6DA /* Products */;
 			projectDirPath = "";
@@ -354,8 +412,12 @@
 				0DFB86A62944F3630048B6DA /* URL+Extensions.swift in Sources */,
 				0DFB86A42944F32C0048B6DA /* String+Extensions.swift in Sources */,
 				0DFB868F2944EA5C0048B6DA /* AppCoordinator.swift in Sources */,
+				0DFB86B42945052D0048B6DA /* AccountRepository.swift in Sources */,
 				0DFB86A82944F3890048B6DA /* Bundle+Extensions.swift in Sources */,
+				0DFB86B8294505CE0048B6DA /* AccountInfo.swift in Sources */,
 				0DFB869F2944F0630048B6DA /* Environment.swift in Sources */,
+				0DFB86AB294500D30048B6DA /* AppRepository.swift in Sources */,
+				0DFB86B2294501920048B6DA /* AccountRepositoryEndpoints.swift in Sources */,
 				0DFB869D2944F0490048B6DA /* NetworkError.swift in Sources */,
 				0DFB86502944D6CE0048B6DA /* AppDelegate.swift in Sources */,
 				0DFB869B2944F03A0048B6DA /* HTTPMethod.swift in Sources */,
@@ -706,6 +768,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0DFB86AC294501060048B6DA /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-log.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0DFB86AD294501060048B6DA /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0DFB86AC294501060048B6DA /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0DFB86442944D6CE0048B6DA /* Project object */;
 }

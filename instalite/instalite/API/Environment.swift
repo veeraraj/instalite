@@ -14,27 +14,30 @@ public enum Environment: String, CaseIterable {
 }
 
 extension Environment {
-    private enum Constants: String {
-        case accessToken = "accessToken"
-        case fatalErrorMessage = "You must supply access token in the Info.plist using the key accessToken"
-        case baseUrl = "https://graph.instagram.com"
+    private struct Constants {
+        static let accessToken = "accessToken"
+        static let fatalErrorMessage = "You must supply access token in the Info.plist using the key accessToken"
     }
     
-    var baseURL: String {
+    private var baseURLString: String {
         switch self {
         case .development, .staging, .production:
-            return Constants.baseUrl.rawValue
+            return "https://graph.instagram.com"
         }
     }
         
+    var accountInfoURLString: String {
+        baseURLString + "/me"
+    }
+    
     // Access token is stored in Configuration(XCConfig) files as we should not hard code them in the code
     
     var accessToken: String {
         guard
-            let accessToken: String = Bundle.fetchValue(for: Constants.accessToken.rawValue),
+            let accessToken: String = Bundle.fetchValue(for: Constants.accessToken),
             !accessToken.isEmpty
         else {
-            fatalError(Constants.fatalErrorMessage.rawValue)
+            fatalError(Constants.fatalErrorMessage)
         }
         
         return accessToken

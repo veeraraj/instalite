@@ -25,6 +25,8 @@ class APIHandler: NetworkRequestProtocol {
         self.networkHandler = networkHandler
     }
     
+    // MARK: Public methods
+    
     func request<T>(_ request: NetworkRequest) async throws-> T
     where T: Decodable, T: Encodable {
         let sessionConfiguration = URLSessionConfiguration.default

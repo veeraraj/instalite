@@ -29,5 +29,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+        viewModel.viewDidLoad()
     }
 }
