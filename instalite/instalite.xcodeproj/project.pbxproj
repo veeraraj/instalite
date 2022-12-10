@@ -16,6 +16,8 @@
 		0DFB86672944D6D10048B6DA /* instaliteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB86662944D6D10048B6DA /* instaliteTests.swift */; };
 		0DFB86712944D6D10048B6DA /* instaliteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB86702944D6D10048B6DA /* instaliteUITests.swift */; };
 		0DFB86732944D6D10048B6DA /* instaliteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB86722944D6D10048B6DA /* instaliteUITestsLaunchTests.swift */; };
+		0DFB86842944DDBB0048B6DA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DFB86862944DDBB0048B6DA /* Localizable.strings */; };
+		0DFB868C2944E0BF0048B6DA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DFB868B2944E0BF0048B6DA /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		0DFB86722944D6D10048B6DA /* instaliteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instaliteUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0DFB86802944DB800048B6DA /* develop.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = develop.xcconfig; sourceTree = "<group>"; };
 		0DFB86812944DB930048B6DA /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
+		0DFB86852944DDBB0048B6DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0DFB868B2944E0BF0048B6DA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +105,15 @@
 		0DFB864E2944D6CE0048B6DA /* instalite */ = {
 			isa = PBXGroup;
 			children = (
-				0DFB867F2944DB280048B6DA /* SupportingFiles */,
 				0DFB864F2944D6CE0048B6DA /* AppDelegate.swift */,
 				0DFB86512944D6CE0048B6DA /* SceneDelegate.swift */,
 				0DFB86532944D6CE0048B6DA /* ViewController.swift */,
 				0DFB86552944D6CE0048B6DA /* Main.storyboard */,
-				0DFB86582944D6D10048B6DA /* Assets.xcassets */,
+				0DFB867F2944DB280048B6DA /* SupportingFiles */,
 				0DFB865A2944D6D10048B6DA /* LaunchScreen.storyboard */,
 				0DFB865D2944D6D10048B6DA /* Info.plist */,
+				0DFB86582944D6D10048B6DA /* Assets.xcassets */,
+				0DFB868B2944E0BF0048B6DA /* Colors.xcassets */,
 			);
 			path = instalite;
 			sourceTree = "<group>";
@@ -133,10 +138,19 @@
 		0DFB867F2944DB280048B6DA /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				0DFB868A2944E0980048B6DA /* Configuration */,
+				0DFB86862944DDBB0048B6DA /* Localizable.strings */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		0DFB868A2944E0980048B6DA /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
 				0DFB86802944DB800048B6DA /* develop.xcconfig */,
 				0DFB86812944DB930048B6DA /* release.xcconfig */,
 			);
-			path = SupportingFiles;
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,7 +257,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DFB868C2944E0BF0048B6DA /* Colors.xcassets in Resources */,
 				0DFB865C2944D6D10048B6DA /* LaunchScreen.storyboard in Resources */,
+				0DFB86842944DDBB0048B6DA /* Localizable.strings in Resources */,
 				0DFB86592944D6D10048B6DA /* Assets.xcassets in Resources */,
 				0DFB86572944D6CE0048B6DA /* Main.storyboard in Resources */,
 			);
@@ -325,6 +341,14 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		0DFB86862944DDBB0048B6DA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DFB86852944DDBB0048B6DA /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -332,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -378,7 +403,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -392,6 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -432,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
