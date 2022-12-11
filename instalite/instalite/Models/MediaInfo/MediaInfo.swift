@@ -25,3 +25,9 @@ struct MediaItem: Codable {
         case caption = "caption"
     }
 }
+
+extension MediaItem {
+    var isAlbum: Bool {
+        mediaType == "CAROUSEL_ALBUM"
+    }
+}

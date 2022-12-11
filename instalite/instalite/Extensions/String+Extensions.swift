@@ -11,4 +11,8 @@ extension String {
     var localized: String {
         NSLocalizedString(self, comment: "\(self)_comment")
     }
+    
+    var url: URL? {
+        URL(string: self)
+    }
 }

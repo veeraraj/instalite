@@ -7,99 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A790E1B9-EF60-40B4-AB68-5E4523E8D5FB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "instalite/API/APIHandler.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "request(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A790E1B9-EF60-40B4-AB68-5E4523E8D5FB - 763d25b7387a307d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for instalite.APIHandler.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(instalite.NetworkRequest) async throws -&gt; &#x3c4;_0_0"
-                  moduleName = "instalite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/veera/Desktop/instalite/instalite/instalite/API/APIHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "650">
-               </Location>
-               <Location
-                  uuid = "A790E1B9-EF60-40B4-AB68-5E4523E8D5FB - 680e83ebe5be98d1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for instalite.APIHandler.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(instalite.NetworkRequest) async throws -&gt; &#x3c4;_0_0"
-                  moduleName = "instalite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/veera/Desktop/instalite/instalite/instalite/API/APIHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "A790E1B9-EF60-40B4-AB68-5E4523E8D5FB - 92894a411382f47b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for instalite.APIHandler.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(instalite.NetworkRequest) async throws -&gt; &#x3c4;_0_0"
-                  moduleName = "instalite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/veera/Desktop/instalite/instalite/instalite/API/APIHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "155">
-               </Location>
-               <Location
-                  uuid = "A790E1B9-EF60-40B4-AB68-5E4523E8D5FB - 2f5fa72606b51b91"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for instalite.APIHandler.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(instalite.NetworkRequest) async throws -&gt; &#x3c4;_0_0"
-                  moduleName = "instalite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/veera/Desktop/instalite/instalite/instalite/API/APIHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "53">
-               </Location>
-               <Location
-                  uuid = "A790E1B9-EF60-40B4-AB68-5E4523E8D5FB - 2f5fa72606b51a78"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for instalite.APIHandler.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(instalite.NetworkRequest) async throws -&gt; &#x3c4;_0_0"
-                  moduleName = "instalite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/veera/Desktop/instalite/instalite/instalite/API/APIHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "123">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "BC9C669A-7719-4697-8D5A-B41F025BFE53"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -127,6 +34,54 @@
             endingLineNumber = "48"
             landmarkName = "request(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D4F08D2F-C099-4FB6-901C-78B299209BBA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "instalite/UI/Home/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "accountInfo"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1CABDABC-00FC-42C0-BBD2-0E38F536E0C3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "instalite/UI/Home/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "error"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6DFB98BD-51E1-4018-9A04-C4FE644E5887"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "instalite/UI/Home/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "mediaInfo"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
