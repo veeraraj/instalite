@@ -5,3 +5,6 @@
   Created by Veera on 10/12/22.
   
 */
+"defaultAlertTitle" = "InstaLite";
+"defaultAlertOk" = "Ok";
+"defaultAlertCancel" = "Cancel";

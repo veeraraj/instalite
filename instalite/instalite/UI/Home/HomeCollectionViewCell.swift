@@ -42,6 +42,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: Public Methods
+    
     func setup(with mediaItem: MediaItem) {
         mediaImageView.sd_setImage(with: mediaItem.mediaURL.url, placeholderImage: UIImage(systemName: Constants.placeHolderImage))
         
@@ -49,7 +50,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
             mediaTypeImageView.isHidden = true
             return
         }
-
+        
         mediaTypeImageView.image = UIImage(systemName: Constants.albumImage)
     }
     

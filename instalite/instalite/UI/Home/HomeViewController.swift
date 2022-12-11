@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     private struct Constants {
         static let userIcon = "person.crop.circle"
         static let cellIdentifier = "mediaCell"
+        static let reloadIcon = "arrow.counterclockwise"
     }
     // MARK: Properties
     
@@ -53,6 +54,16 @@ class HomeViewController: UIViewController {
         return label
     }()
     
+    private lazy var reloadButton: UIButton = {
+        let button = UIButton()
+        let configuration = UIImage.SymbolConfiguration(pointSize: 32)
+        let reloadButtonImage = UIImage(systemName: Constants.reloadIcon, withConfiguration: configuration)
+        button.setImage(reloadButtonImage, for: .normal)
+        button.addTarget(self, action: #selector(didTapReload), for: .touchUpInside)
+        button.tintColor = .theme(.imageTint)
+        return button
+    }()
+    
     private lazy var collectionView: UICollectionView = {
         let viewLayout = UICollectionViewFlowLayout()
         viewLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -91,11 +102,17 @@ class HomeViewController: UIViewController {
     
     // MARK: private Methods
     
+    @objc
+    func didTapReload() {
+        viewModel.didTapReload()
+    }
+    
     private func configureView() {
         view.addSubview(accountInfoView)
         accountInfoView.addSubview(accountInfoImageView)
         accountInfoView.addSubview(userNameLabel)
         accountInfoView.addSubview(postCountLabel)
+        accountInfoView.addSubview(reloadButton)
         view.addSubview(collectionView)
     }
     
@@ -105,6 +122,13 @@ class HomeViewController: UIViewController {
             accountInfoView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             accountInfoView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             accountInfoView.heightAnchor.constraint(equalToConstant: 160)
+        ])
+        
+        reloadButton.activate(constraints: [
+            reloadButton.bottomAnchor.constraint(equalTo: accountInfoView.bottomAnchor, constant: -16),
+            reloadButton.trailingAnchor.constraint(equalTo: accountInfoView.trailingAnchor, constant: -16),
+            reloadButton.heightAnchor.constraint(equalToConstant: 32),
+            reloadButton.widthAnchor.constraint(equalToConstant: 32)
         ])
         
         accountInfoImageView.activate(constraints: [
@@ -147,7 +171,7 @@ class HomeViewController: UIViewController {
         viewModel.didReceiveError = { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.async {
-                
+                self.showInfoAlert(message: self.viewModel.error?.localizedDescription ?? NetworkError.unknown.localizedDescription)
             }
         }
         
@@ -177,14 +201,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 }
 
 extension HomeViewController: UICollectionViewDelegate {
-    
-}
-
-extension UIImageView {
-    func applyCircluarBorder() {
-        layer.cornerRadius = frame.size.width / 2
-        clipsToBounds = true
-        layer.borderWidth = 3.0
-        layer.borderColor = UIColor.white.cgColor
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let mediaItem = viewModel.mediaInfo?.data[indexPath.row] else { return }
+        print(mediaItem)
     }
 }
