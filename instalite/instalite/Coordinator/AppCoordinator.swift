@@ -37,8 +37,4 @@ class AppCoordinator: Coordinator {
         let viewController = UIHostingController(rootView: view)
         navigationController.pushViewController(viewController, animated: true)
     }
-        
-    func showHome() {
-        navigationController.popViewController(animated: true)
-    }
 }

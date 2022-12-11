@@ -85,6 +85,7 @@
 		0D97B42629466F9D00F215D1 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		0D97B4282946701B00F215D1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		0D97B42A294670A200F215D1 /* MediaDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		0D97B42D2946771C00F215D1 /* instagramAPI Copy.postman_collection.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "instagramAPI Copy.postman_collection.json"; sourceTree = "<group>"; };
 		0DFB864C2944D6CE0048B6DA /* instalite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instalite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DFB864F2944D6CE0048B6DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DFB86582944D6D10048B6DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -189,6 +190,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		0D97B42C2946771C00F215D1 /* postmanCollections */ = {
+			isa = PBXGroup;
+			children = (
+				0D97B42D2946771C00F215D1 /* instagramAPI Copy.postman_collection.json */,
+			);
+			path = postmanCollections;
+			sourceTree = SOURCE_ROOT;
+		};
 		0DFB86432944D6CE0048B6DA = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +262,7 @@
 		0DFB867F2944DB280048B6DA /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				0D97B42C2946771C00F215D1 /* postmanCollections */,
 				0DFB868A2944E0980048B6DA /* Configuration */,
 				0DFB86862944DDBB0048B6DA /* Localizable.strings */,
 			);
@@ -279,9 +289,9 @@
 		0DFB86902944EC680048B6DA /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				0D97B42329466F4200F215D1 /* Common */,
 				0D97B4092946490C00F215D1 /* Detail */,
 				0DFB86912944EC720048B6DA /* Home */,
+				0D97B42329466F4200F215D1 /* Common */,
 			);
 			path = UI;
 			sourceTree = "<group>";

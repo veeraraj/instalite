@@ -103,7 +103,7 @@ class HomeViewController: UIViewController {
     // MARK: private Methods
     
     @objc
-    func didTapReload() {
+    private func didTapReload() {
         viewModel.didTapReload()
     }
     
@@ -114,6 +114,31 @@ class HomeViewController: UIViewController {
         accountInfoView.addSubview(postCountLabel)
         accountInfoView.addSubview(reloadButton)
         view.addSubview(collectionView)
+    }
+    
+    private func bind() {
+        viewModel.didReceieveAccountInfo = { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                guard let accountInfo = self.viewModel.accountInfo else { return }
+                self.postCountLabel.text = "Posts: \(accountInfo.media_count)"
+                self.userNameLabel.text = accountInfo.username
+            }
+        }
+        
+        viewModel.didReceiveError = { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.showInfoAlert(message: self.viewModel.error?.localizedDescription ?? NetworkError.unknown.localizedDescription)
+            }
+        }
+        
+        viewModel.didReceieveMediaInfo = { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
     }
     
     private func configureConstraints() {
@@ -157,32 +182,9 @@ class HomeViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    
-    private func bind() {
-        viewModel.didReceieveAccountInfo = { [weak self] in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                guard let accountInfo = self.viewModel.accountInfo else { return }
-                self.postCountLabel.text = "Posts: \(accountInfo.media_count)"
-                self.userNameLabel.text = accountInfo.username
-            }
-        }
-        
-        viewModel.didReceiveError = { [weak self] in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.showInfoAlert(message: self.viewModel.error?.localizedDescription ?? NetworkError.unknown.localizedDescription)
-            }
-        }
-        
-        viewModel.didReceieveMediaInfo = { [weak self] in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
-    }
 }
+
+// MARK: UICollectionViewDataSource
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -199,6 +201,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         return cell
     }
 }
+
+// MARK: UICollectionViewDelegate
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

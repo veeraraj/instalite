@@ -11,12 +11,16 @@ typealias Headers = [String: String]
 typealias QueryParams = [String: String]
 
 struct NetworkRequest {
+    // MARK: Properties
+    
     let url: String
     let headers: Headers?
     let body: Data?
     let requestTimeOut: Float?
     let httpMethod: HTTPMethod
     let queryParams: QueryParams?
+    
+    // MARK: Init
     
     init(
         url: String,

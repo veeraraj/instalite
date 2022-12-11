@@ -14,6 +14,8 @@ final class HomeViewModelTests: XCTestCase {
     private var accountService: AccountRepositoryProtocolMock!
     private var mediaService: MediaRepositoryProtocolMock!
     
+    // MARK: Setup
+    
     override func setUp() {
         super.setUp()
         
@@ -29,6 +31,8 @@ final class HomeViewModelTests: XCTestCase {
         
         super.tearDown()
     }
+    
+    // MARK: Tests
     
     func test_account_and_media_info() {
         accountService.given(.fetchAccountInfo(willReturn: mockAccountInfoAvailable()))
@@ -63,6 +67,8 @@ final class HomeViewModelTests: XCTestCase {
         wait(for: [expect], timeout: 3.0)
     }
 }
+
+// MARK: Mock
 
 private extension HomeViewModelTests {
     func mockAccountInfoAvailable() -> AccountInfo {

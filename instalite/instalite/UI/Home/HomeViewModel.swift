@@ -10,6 +10,7 @@ import Logging
 
 final class HomeViewModel {
     // MARK: Properties
+    
     weak var coordinator: AppCoordinator?
     private let accountInfoRepository: AccountRepositoryProtocol
     private let mediaInfoRepository: MediaRepositoryProtocol

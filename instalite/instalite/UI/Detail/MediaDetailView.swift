@@ -9,9 +9,8 @@ import SwiftUI
 
 struct MediaDetailView: View {
     private struct Constants{
-        static let searchButtonTitle = "Search for images"
         static let placeHolderImage = "photo"
-        static let loading = "Loading".localized
+        static let loading = "loading"
     }
     
     @ObservedObject var viewModel: MediaDetailViewModel
@@ -125,7 +124,7 @@ struct MediaDetailView: View {
     @ViewBuilder
     func pageLoadingView() -> some View {
         VStack {
-            LoadingView(loadingText: Constants.loading)
+            LoadingView(loadingText: Constants.loading.localized)
         }
     }
     

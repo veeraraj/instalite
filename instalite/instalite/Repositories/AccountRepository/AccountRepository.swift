@@ -14,14 +14,20 @@ protocol AccountRepositoryProtocol {
 
 class AccountRepository: AccountRepositoryProtocol {
     
+    // MARK: Properties
+    
     private var networkRequest: NetworkRequestProtocol
     private var environment: Environment
+    
+    // MARK: Init
     
     init(networkRequest: NetworkRequestProtocol, environment: Environment = .development) {
         self.networkRequest = networkRequest
         self.environment = environment
     }
 
+    // MARK: Public methods
+    
     func fetchAccountInfo() async throws -> AccountInfo {
         let endpoint = AccountRepositoryEndpoints.fetchAccountInfo
         let request = endpoint.createRequest(environment: self.environment)
