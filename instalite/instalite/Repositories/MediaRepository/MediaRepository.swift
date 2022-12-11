@@ -7,6 +7,7 @@
 
 import Foundation
 
+//sourcery: AutoMockable
 protocol MediaRepositoryProtocol {
     func fetchMediaInfo() async throws -> MediaInfo
     func fetchAlbumInfo(for albumId: String) async throws -> AlbumInfo

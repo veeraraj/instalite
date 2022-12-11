@@ -1,14 +1,15 @@
 //
-//  instaliteTests.swift
+//  MediaDetailsViewModelTests.swift
 //  instaliteTests
 //
-//  Created by Veera on 10/12/22.
+//  Created by Veera on 11/12/22.
 //
 
 import XCTest
+import SwiftyMocky
 @testable import instalite
 
-final class instaliteTests: XCTestCase {
+final class MediaDetailsViewModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

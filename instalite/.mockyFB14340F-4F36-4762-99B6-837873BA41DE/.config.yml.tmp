@@ -1,0 +1,12 @@
+sources:
+  include:
+  - ../instalite
+templates:
+- /Users/veera/Desktop/instalite/instalite/.mockyFB14340F-4F36-4762-99B6-837873BA41DE/.template.swifttemplate
+output: /Users/veera/Desktop/instalite/instalite/.mockyFB14340F-4F36-4762-99B6-837873BA41DE/types.yaml
+args:
+  swiftyMocky:
+    import:
+    - Foundation
+    testable:
+    - instalite

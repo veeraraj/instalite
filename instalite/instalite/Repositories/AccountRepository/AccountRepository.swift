@@ -7,6 +7,7 @@
 
 import Foundation
 
+//sourcery: AutoMockable
 protocol AccountRepositoryProtocol {
     func fetchAccountInfo() async throws -> AccountInfo
 }

@@ -15,4 +15,19 @@ extension String {
     var url: URL? {
         URL(string: self)
     }
+    
+    func formattedDateString() -> String? {
+        
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        
+        if let date = inputFormatter.date(from: self) {
+            let outputFormatter = DateFormatter()
+            outputFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+            
+            return outputFormatter.string(from: date)
+        }
+        
+        return nil
+    }
 }

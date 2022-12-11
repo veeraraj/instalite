@@ -1,0 +1,13 @@
+sourceryCommand: null
+sourceryTemplate: null
+instaliteTests:
+  sources:
+    include:
+    - ./instalite
+  output: ./Mock.generated.swift
+  targets:
+  - instaliteTests
+  testable:
+  - instalite
+  import:
+  - Foundation
