@@ -1,6 +1,7 @@
 # instalite
 
-![Overview]([https://github.com/veeraraj/instalite/blob/main/ReadMe/basicOverview.png])
+<img width="700" alt="basicOverview" src="https://user-images.githubusercontent.com/3583771/206929594-63322c3e-1fb8-4377-b591-31e9aec2439d.png">
+
 
 Xcode 14.0
 Base depolyment iOS version - 15.0 
