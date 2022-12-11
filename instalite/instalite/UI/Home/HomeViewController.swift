@@ -203,6 +203,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let mediaItem = viewModel.mediaInfo?.data[indexPath.row] else { return }
-        print(mediaItem)
+        viewModel.didTapMediaItem(mediaItem)
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 protocol Coordinator {
     var childCoordinators: [Coordinator] { get set }
@@ -27,6 +28,13 @@ class AppCoordinator: Coordinator {
         let viewModel = HomeViewModel(accountInfoRepository: AppRepository.shared.AccountInfoRepository, mediaInfoRepository: AppRepository.shared.MediaInfoRepository)
         viewModel.coordinator =  self
         let viewController = HomeViewController(viewModel: viewModel)
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func showMediaDetails(_ imageURLStrings: [String]) {
+        let viewModel = MediaDetailViewModel(mediaURLStrings: imageURLStrings)
+        let view = MediaDetailView(viewModel: viewModel)
+        let viewController = UIHostingController(rootView: view)
         navigationController.pushViewController(viewController, animated: true)
     }
         
