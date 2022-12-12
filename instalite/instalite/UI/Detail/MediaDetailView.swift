@@ -30,10 +30,11 @@ struct MediaDetailView: View {
         case .failure(let errorMessage):
             errorView(errorMessage: errorMessage)
         case .loaded:
-            if viewModel.mediaItem != nil {
-                photoView()
-            } else {
-                albumView()
+            if let mediaItem = viewModel.mediaItem {
+                photoView(mediaItem: mediaItem)
+            }
+            if let albumInfo = viewModel.albumInfo {
+                albumView(albumInfo: albumInfo)
             }
         case .empty:
             emptyResultsView()
@@ -41,9 +42,9 @@ struct MediaDetailView: View {
     }
     
     @ViewBuilder
-    func photoView() -> some View {
+    func photoView(mediaItem: MediaItem) -> some View {
         VStack {
-            AsyncImage(url: viewModel.mediaItem?.mediaURL.url) { phase in
+            AsyncImage(url: mediaItem.mediaURL.url) { phase in
                 switch phase {
                 case .success(let image):
                     image
@@ -66,15 +67,19 @@ struct MediaDetailView: View {
                 }
             }
             
-            Text(viewModel.mediaItem?.timestamp.formattedDateString() ?? "")
+            VStack(spacing: 8) {
+                Text(mediaItem.caption ?? "")
+                Text(mediaItem.timestamp.formattedDateString() ?? "")
+            }
+            .padding(.top, 16)
         }
     }
     
     @ViewBuilder
-    func albumView() -> some View {
+    func albumView(albumInfo: AlbumInfo) -> some View {
         ScrollView {
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-                ForEach(viewModel.albumInfo!.data, id: \.id) { albumItem in
+            LazyVGrid(columns: [GridItem(.flexible())], spacing: 20) {
+                ForEach(albumInfo.data, id: \.id) { albumItem in
                     VStack {
                         AsyncImage(url: albumItem.mediaURL.url) { phase in
                             switch phase {

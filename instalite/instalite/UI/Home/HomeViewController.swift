@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
         static let userIcon = "person.crop.circle"
         static let cellIdentifier = "mediaCell"
         static let reloadIcon = "arrow.counterclockwise"
+        static let noPhotosAvailable = "noPhotosAvailable"
     }
     // MARK: Properties
     
@@ -66,8 +67,8 @@ class HomeViewController: UIViewController {
     
     private lazy var collectionView: UICollectionView = {
         let viewLayout = UICollectionViewFlowLayout()
-        viewLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         viewLayout.itemSize = CGSize(width: 100, height: 100)
+        viewLayout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
         collectionView.backgroundColor = .theme(.pageBackground)
         collectionView.delegate = self
@@ -136,6 +137,11 @@ class HomeViewController: UIViewController {
         viewModel.didReceieveMediaInfo = { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.async {
+                guard self.viewModel.mediaInfo?.data.isEmpty == false else {
+                    self.showInfoAlert(message: Constants.noPhotosAvailable.localized)
+                    return
+                }
+                
                 self.collectionView.reloadData()
             }
         }
@@ -176,9 +182,9 @@ class HomeViewController: UIViewController {
         ])
         
         collectionView.activate(constraints: [
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: accountInfoView.bottomAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            collectionView.topAnchor.constraint(equalTo: accountInfoView.bottomAnchor, constant: 16),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }

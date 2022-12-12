@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import Logging
 
+@MainActor
 final class MediaDetailViewModel: ObservableObject {
     enum ViewState {
         case idle

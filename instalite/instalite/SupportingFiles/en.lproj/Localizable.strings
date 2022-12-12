@@ -9,3 +9,5 @@
 "defaultAlertOk" = "Ok";
 "defaultAlertCancel" = "Cancel";
 "loading" = "Loading";
+"noPhotosAvailable" = "no photos available";
+"noAccessTokenError" = "You must supply access token in the Info.plist using the key accessToken";

@@ -16,14 +16,14 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     private lazy var mediaImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         
         return imageView
     }()
     
     private lazy var mediaTypeImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         imageView.tintColor = .theme(.imageTint)
         
         return imageView
@@ -41,17 +41,16 @@ class HomeCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        mediaImageView.image = nil
+        mediaTypeImageView.image = nil
+    }
+    
     // MARK: Public Methods
     
     func setup(with mediaItem: MediaItem) {
         mediaImageView.sd_setImage(with: mediaItem.mediaURL.url, placeholderImage: UIImage(systemName: Constants.placeHolderImage))
-        
-        guard mediaItem.isAlbum else {
-            mediaTypeImageView.isHidden = true
-            return
-        }
-        
-        mediaTypeImageView.image = UIImage(systemName: Constants.albumImage)
+        mediaTypeImageView.image = mediaItem.isAlbum ? UIImage(systemName: Constants.albumImage) : nil
     }
     
     // MARK: Private methods

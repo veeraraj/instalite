@@ -16,7 +16,7 @@ public enum Environment: String, CaseIterable {
 extension Environment {
     private struct Constants {
         static let accessToken = "accessToken"
-        static let fatalErrorMessage = "You must supply access token in the Info.plist using the key accessToken"
+        static let fatalErrorMessage = "noAccessTokenError"
     }
     
     private var baseURLString: String {
@@ -44,7 +44,7 @@ extension Environment {
             let accessToken: String = Bundle.fetchValue(for: Constants.accessToken),
             !accessToken.isEmpty
         else {
-            fatalError(Constants.fatalErrorMessage)
+            fatalError(Constants.fatalErrorMessage.localized)
         }
         
         return accessToken
