@@ -1,7 +1,12 @@
-# instalite
+# InstaLite
 
-<img width="700" alt="basicOverview" src="https://user-images.githubusercontent.com/3583771/206929594-63322c3e-1fb8-4377-b591-31e9aec2439d.png">
+# Overview
 
+<img width="700" alt="appOverview" src="https://user-images.githubusercontent.com/3583771/207049340-a0cd1fa0-02b4-45b9-bf16-60ca57e68f79.png">
+
+# To Run 
+
+Add the access token in develop and realse configuration files. root/instalite/SupportingFiles/Configuration
 
 Xcode 14.0
 Base depolyment iOS version - 15.0 
