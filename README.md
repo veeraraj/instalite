@@ -8,6 +8,8 @@
 
 Add the access token in develop and realse configuration files. root/instalite/SupportingFiles/Configuration
 
+# Setup 
+
 Xcode 14.0
 Base depolyment iOS version - 15.0 
 
