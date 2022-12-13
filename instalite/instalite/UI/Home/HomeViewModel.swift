@@ -59,7 +59,6 @@ extension HomeViewModel {
         fetchAccountInfo()
     }
     
-    @MainActor
     func didTapMediaItem(_ mediatItem: MediaItem) {
         coordinator?.showMediaDetails(mediatItem)
     }

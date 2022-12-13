@@ -31,7 +31,7 @@ class AppCoordinator: Coordinator {
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    @MainActor func showMediaDetails(_ mediaItem: MediaItem) {
+    func showMediaDetails(_ mediaItem: MediaItem) {
         let viewModel = MediaDetailViewModel(selectedMediaItem: mediaItem, mediaInfoRepository: AppRepository.shared.MediaInfoRepository)
         let view = MediaDetailView(viewModel: viewModel)
         let viewController = UIHostingController(rootView: view)

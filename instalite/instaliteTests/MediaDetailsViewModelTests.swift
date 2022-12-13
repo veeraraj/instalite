@@ -31,7 +31,6 @@ final class MediaDetailsViewModelTests: XCTestCase {
     
     // MARK: Tests
     
-    @MainActor
     func test_photo_media_details() {
         viewModel = MediaDetailViewModel(selectedMediaItem: mockPhotoMediaDetails(), mediaInfoRepository: mediaService)
         
@@ -46,7 +45,6 @@ final class MediaDetailsViewModelTests: XCTestCase {
         wait(for: [expect], timeout: 3.0)
     }
     
-    @MainActor
     func test_album_media_details() {
         viewModel = MediaDetailViewModel(selectedMediaItem: mockAlbumMediaDetails(), mediaInfoRepository: mediaService)
         mediaService.given(.fetchAlbumInfo(for: "3454", willReturn: mockAlbumInfo()))
@@ -63,7 +61,6 @@ final class MediaDetailsViewModelTests: XCTestCase {
         wait(for: [expect], timeout: 3.0)
     }
     
-    @MainActor
     func test_album_empty_results() {
         viewModel = MediaDetailViewModel(selectedMediaItem: mockAlbumMediaDetails(), mediaInfoRepository: mediaService)
         mediaService.given(.fetchAlbumInfo(for: "3454", willReturn: mockEmptyAlbumInfo()))

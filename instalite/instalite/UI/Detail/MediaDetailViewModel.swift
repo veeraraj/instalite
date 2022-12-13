@@ -9,7 +9,6 @@ import Foundation
 import Combine
 import Logging
 
-@MainActor
 final class MediaDetailViewModel: ObservableObject {
     enum ViewState {
         case idle
@@ -52,8 +51,11 @@ final class MediaDetailViewModel: ObservableObject {
         
         Task {
             do {
-                albumInfo = try await mediaInfoRepository.fetchAlbumInfo(for: mediaItem.id)
-                currentState = albumInfo?.data.isEmpty == true ? .empty : .loaded
+                let albumInfoObject = try await mediaInfoRepository.fetchAlbumInfo(for: mediaItem.id)
+                await MainActor.run {
+                    albumInfo = albumInfoObject
+                    currentState = albumInfo?.data.isEmpty == true ? .empty : .loaded
+                }
             } catch let fetchError {
                 logger.error("\(fetchError)")
                 currentState = .failure(error: fetchError.localizedDescription)
